@@ -1,0 +1,5 @@
+bump:
+  recurse: false
+  file: 'lib/solidus_address_name/version.rb'
+  message: Bump SolidusAddressName to %{version}
+  tag: true
