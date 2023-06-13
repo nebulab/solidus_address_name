@@ -45,6 +45,12 @@ RSpec.describe Spree::Address, type: :model do
       expect(address.errors['zipcode']).to include("can't be blank")
     end
 
+    it "requires name" do
+      address.name = ""
+      address.valid?
+      expect(address.errors['name']).to include("can't be blank")
+    end
+
     context "phone not required" do
       before { stub_spree_preferences(address_requires_phone: false) }
 
@@ -126,7 +132,7 @@ RSpec.describe Spree::Address, type: :model do
 
   context ".immutable_merge" do
     RSpec::Matchers.define :be_address_equivalent_attributes do |expected|
-      fields_of_interest = [:name, :company, :address1, :address2, :city, :zipcode, :phone, :alternative_phone]
+      fields_of_interest = [:name, :firstname, :lastname, :company, :address1, :address2, :city, :zipcode, :phone, :alternative_phone]
       match do |actual|
         expected_attrs = expected.symbolize_keys.slice(*fields_of_interest)
         actual_attrs = actual.symbolize_keys.slice(*fields_of_interest)
@@ -266,7 +272,7 @@ RSpec.describe Spree::Address, type: :model do
       address = Spree::Address.new(name: 'Jane Von Doe')
 
       expect(address.as_json).to include('name' => 'Jane Von Doe')
-      expect(address.as_json.keys).not_to include('firstname', 'lastname')
+      expect(address.as_json.keys).to include('firstname', 'lastname')
     end
   end
 
