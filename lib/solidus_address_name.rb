@@ -3,3 +3,4 @@
 require 'solidus_address_name/configuration'
 require 'solidus_address_name/version'
 require 'solidus_address_name/engine'
+require 'deface'

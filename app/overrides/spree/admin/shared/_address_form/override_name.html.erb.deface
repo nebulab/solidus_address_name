@@ -1,0 +1,13 @@
+<!--
+  replace '[data-hook=address_fields] div:first'
+-->
+
+<div class="field <%= "#{type}-row" %>">
+  <%= f.label :first_name %>
+  <%= f.text_field :firstname, class: 'fullwidth' %>
+</div>
+
+<div class="field <%= "#{type}-row" %>">
+  <%= f.label :last_name %>
+  <%= f.text_field :lastname, class: 'fullwidth' %>
+</div>
