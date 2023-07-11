@@ -3,7 +3,15 @@
 [![CircleCI](https://circleci.com/gh/solidusio-contrib/solidus_address_name.svg?style=shield)](https://circleci.com/gh/solidusio-contrib/solidus_address_name)
 [![codecov](https://codecov.io/gh/solidusio-contrib/solidus_address_name/branch/master/graph/badge.svg)](https://codecov.io/gh/solidusio-contrib/solidus_address_name)
 
-<!-- Explain what your extension does. -->
+Without this gem, when you'll update to solidus v3, you'll have failures setting `firstname` and `lastname` on
+`Spree::Address` records because of their deprecation in Solidus v2.11 and removal in Solidus v3.0
+
+Ref:
+* https://github.com/solidusio/solidus/pull/3584
+* https://github.com/solidusio/solidus/issues/3234
+
+This gem provides backwards compatibility to that change by allowing `firstname`, `lastname` to work as earlier
+along with `name`
 
 ## Installation
 
@@ -20,8 +28,18 @@ bin/rails generate solidus_address_name:install
 ```
 
 ## Usage
+Only installing the extension and running the install generator should suffice.
+You should be able to continue getting & setting names as before
 
-<!-- Explain how to use your extension once it's been installed. -->
+```ruby
+address.firstname = 'John' # or first_name
+address.lastname = 'Doe' # or last_name
+address.valid? # true
+
+address.name = 'John Doe'
+address.valid? # true
+```
+
 
 ## Development
 
