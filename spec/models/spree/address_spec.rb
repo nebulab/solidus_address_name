@@ -300,4 +300,16 @@ RSpec.describe Spree::Address, type: :model do
 
     it { is_expected.to be_require_phone }
   end
+
+  context 'when using address factory' do
+    let(:address) { build(:address) }
+
+    it 'has John as first_name' do
+      expect(address.firstname).to eq 'John'
+    end
+
+    it 'has a nil last_name' do
+      expect(address.lastname).to be_nil
+    end
+  end
 end
