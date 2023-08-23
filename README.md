@@ -66,6 +66,12 @@ You can load Solidus core factories along with this extension's factories using 
 SolidusDevSupport::TestingSupport::Factories.load_for(SolidusAddressName::Engine)
 ```
 
+or, if you're not using `SolidusDevSupport`:
+
+```ruby
+require 'solidus_address_name/testing_support/factories'
+```
+
 ### Running the sandbox
 
 To run this extension in a sandboxed Solidus application, you can run `bin/sandbox`. The path for
