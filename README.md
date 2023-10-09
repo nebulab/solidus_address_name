@@ -1,6 +1,6 @@
 # Solidus Address Name
 
-[![CircleCI](https://circleci.com/gh/solidusio-contrib/solidus_address_name.svg?style=shield)](https://circleci.com/gh/solidusio-contrib/solidus_address_name)
+[![CircleCI](https://circleci.com/gh/nebulab/solidus_address_name.svg?style=shield)](https://circleci.com/gh/nebulab/solidus_address_name)
 [![codecov](https://codecov.io/gh/solidusio-contrib/solidus_address_name/branch/master/graph/badge.svg)](https://codecov.io/gh/solidusio-contrib/solidus_address_name)
 
 Without this gem, when you'll update to solidus v3, you'll have failures setting `firstname` and `lastname` on
