@@ -94,4 +94,4 @@ Please refer to the [dedicated page](https://github.com/solidusio/solidus/wiki/H
 
 ## License
 
-Copyright (c) 2023 Michelle Crisologo, released under the New BSD License.
+Copyright (c) 2025 Michelle Crisologo, released under the New BSD License.

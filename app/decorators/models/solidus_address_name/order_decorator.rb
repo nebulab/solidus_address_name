@@ -5,8 +5,8 @@ module SolidusAddressName
     def self.prepended(base)
       base.delegate :firstname, :lastname, to: :bill_address, prefix: true, allow_nil: true
 
-      base.alias_attribute :billing_firstname, :bill_address_firstname
-      base.alias_attribute :billing_lastname, :bill_address_lastname
+      base.alias_method :billing_firstname, :bill_address_firstname
+      base.alias_method :billing_lastname, :bill_address_lastname
     end
 
     Spree::Order.prepend(self)

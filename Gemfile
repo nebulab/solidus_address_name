@@ -20,15 +20,13 @@ end
 # See https://github.com/bundler/bundler/issues/6677
 gem 'rails', '>0.a'
 
-# Provides basic authentication functionality for testing parts of your engine
-gem 'solidus_auth_devise'
 case ENV.fetch('DB', nil)
 when 'mysql'
   gem 'mysql2'
 when 'postgresql'
   gem 'pg'
 else
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.4'
 end
 
 # While we still support Ruby < 3 we need to workaround a limitation in
